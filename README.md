@@ -37,9 +37,9 @@ python wavetable_tool.py --wav_dir sample_wavetables/ replace MicroFreak_Firmwar
 Run `python wavetable_tool.py -h` for more options.
 
 #### Notes
-* There are 16 waves in the wavetable on the device; each wave contains 32 cycles, and each cycle is 256 samples long.
+* There are 16 wavetables on the device; each wavetable contains 32 cycles, and each cycle is 256 samples long.
 * I believe the sample format is 16-bit mono @ 40kHz. Yes, 40000Hz. Each sample is tuned to D#4.
-* The tool only supports 16-bit mono WAV files; each wave must contain at least 8192 samples. They should be encoded at 40kHz if you want them to sound correct.
+* The tool only supports 16-bit mono WAV files; each wavetable must contain at least 8192 samples, and the first 8192 will be used. They should be encoded at 40kHz if you want them to sound correct.
 
 ## Libraries
 
