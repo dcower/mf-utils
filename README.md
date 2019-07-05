@@ -61,7 +61,7 @@ Smooths MicroFreak-style wavetables (stored as WAVs in the same format as output
 
 Example:
 ```
-python wavetabula.py --wav_dir sample_wavetables/ --out_wav_dir fade_wavetables/ smooth --fade_distance 16 --fade_target zero --rotate
+python wavetabula.py --wav_dir sample_wavetables_unsmoothed/ --out_wav_dir sample_wavetables/ smooth --fade_distance 16 --fade_target zero --rotate
 ```
 
 Run `python wavetabula.py smooth -h` for more details.
