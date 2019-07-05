@@ -7,7 +7,7 @@ Utilities for the [Arturia MicroFreak](https://www.arturia.com/products/hardware
 
 ## Utilities
 
-### [wavetable_tool.py](https://github.com/dcower/mf-utils/blob/master/wavetable_tool.py)
+### wavetabula
 Extract, replace, and modify wavetables in MicroFreak firmware files (.mff).
 
 #### Requirements
@@ -21,7 +21,7 @@ You need Python 2.7 or later, or Python 3.4 or later, to run this tool. If you d
 3. Extract wavetables from the firmware:
 
 ```
-python wavetable_tool.py --out_wav_dir out_wavetables/ extract MicroFreak_Firmware_Update_1_1_2_390.mff
+python wavetabula.py --out_wav_dir out_wavetables/ extract MicroFreak_Firmware_Update_1_1_2_390.mff
 ```
 
 4. Modify the newly extracted wavetables as you see fit. For this example, we'll use the supplied sample wavetables I made.
@@ -29,12 +29,12 @@ python wavetable_tool.py --out_wav_dir out_wavetables/ extract MicroFreak_Firmwa
 5. Replace the wavetables in the firmware with our fancy new wavetables:
 
 ```
-python wavetable_tool.py --wav_dir sample_wavetables/ replace MicroFreak_Firmware_Update_1_1_2_390.mff
+python wavetabula.py --wav_dir sample_wavetables/ replace MicroFreak_Firmware_Update_1_1_2_390.mff
 ```
 
 6. Voila! You should now have a file named `new_firmware.mff` (by default), which you can flash via Arturia's MIDI Control Center. Read the giant **WARNING** above before doing so; be aware that you could brick your device by doing this.
 
-Run `python wavetable_tool.py -h` or see below for more options.
+Run `python wavetabula.py -h` or see below for more options.
 
 #### Commands
 
@@ -43,30 +43,30 @@ Extracts wavetables from the specified MicroFreak firmware file (.mff) and write
 
 Example:
 ```
-python wavetable_tool.py --out_wav_dir out_wavetables/ extract MicroFreak_Firmware_Update_1_1_2_390.mff
+python wavetabula.py --out_wav_dir out_wavetables/ extract MicroFreak_Firmware_Update_1_1_2_390.mff
 ```
 
-Run `python wavetable_tool.py extract -h` for more details.
+Run `python wavetabula.py extract -h` for more details.
 
 ##### Replace
 Replaces wavetables in the specified MicroFreak firmware file (.mff) with wavetables (stored as WAVs in the same format as output from the `extract` command) in the specified directory.
 
 Example:
 ```
-python wavetable_tool.py --wav_dir sample_wavetables/ replace --out_firmware my_custom_firmware.mff MicroFreak_Firmware_Update_1_1_2_390.mff
+python wavetabula.py --wav_dir sample_wavetables/ replace --out_firmware my_custom_firmware.mff MicroFreak_Firmware_Update_1_1_2_390.mff
 ```
 
-Run `python wavetable_tool.py replace -h` for more details.
+Run `python wavetabula.py replace -h` for more details.
 
 ##### Smooth
 Smooths MicroFreak-style wavetables (stored as WAVs in the same format as output from the `extract` command) in the specified directory. This can be used to reduce pops, clicks, and other artifacts you may hear when experimenting with your own wavetables.
 
 Example:
 ```
-python wavetable_tool.py --wav_dir sample_wavetables/ --out_wav_dir fade_wavetables/ smooth --fade_distance 16 --fade_target zero --rotate
+python wavetabula.py --wav_dir sample_wavetables/ --out_wav_dir fade_wavetables/ smooth --fade_distance 16 --fade_target zero --rotate
 ```
 
-Run `python wavetable_tool.py smooth -h` for more details.
+Run `python wavetabula.py smooth -h` for more details.
 
 #### Notes
 * There are 16 wavetables on the device; each wavetable contains 32 cycles, and each cycle is 256 samples long.
