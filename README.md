@@ -5,15 +5,13 @@ Utilities for the [Arturia MicroFreak](https://www.arturia.com/products/hardware
 | WARNING: Flashing your MicroFreak with custom firmware not from Arturia -- firmware created with these tools -- may void your warranty or brick your MicroFreak. I am not responsible if your MicroFreak is bricked by this process. |
 | --- |
 
-## Utilities
-
-### wavetabula
+## wavetabula
 Extract, replace, and modify wavetables in MicroFreak firmware files (.mff).
 
-#### Requirements
+### Requirements
 You need Python 2.7 or later, or Python 3.4 or later, to run this tool. If you don't have Python installed, you can get it here: http://www.python.org/getit/
 
-#### Usage
+### Usage
 1. Clone or download the repository.
 
 2. Download a MicroFreak firmware file (.mff) from [Arturia's Resources page for MicroFreak](https://www.arturia.com/products/hardware-synths/microfreak/resources).
@@ -36,9 +34,9 @@ python wavetabula.py --wav_dir sample_wavetables/ replace MicroFreak_Firmware_Up
 
 Run `python wavetabula.py -h` or see below for more options.
 
-#### Commands
+### Commands
 
-##### Extract
+#### Extract
 Extracts wavetables from the specified MicroFreak firmware file (.mff) and writes the wavetables to separate WAV files, one for each table.
 
 Example:
@@ -48,7 +46,7 @@ python wavetabula.py --out_wav_dir out_wavetables/ extract MicroFreak_Firmware_U
 
 Run `python wavetabula.py extract -h` for more details.
 
-##### Replace
+#### Replace
 Replaces wavetables in the specified MicroFreak firmware file (.mff) with wavetables (stored as WAVs in the same format as output from the `extract` command) in the specified directory.
 
 Example:
@@ -58,7 +56,7 @@ python wavetabula.py --wav_dir sample_wavetables/ replace --out_firmware my_cust
 
 Run `python wavetabula.py replace -h` for more details.
 
-##### Smooth
+#### Smooth
 Smooths MicroFreak-style wavetables (stored as WAVs in the same format as output from the `extract` command) in the specified directory. This can be used to reduce pops, clicks, and other artifacts you may hear when experimenting with your own wavetables.
 
 Example:
@@ -68,7 +66,7 @@ python wavetabula.py --wav_dir sample_wavetables/ --out_wav_dir fade_wavetables/
 
 Run `python wavetabula.py smooth -h` for more details.
 
-#### Notes
+### Notes
 * There are 16 wavetables on the device; each wavetable contains 32 cycles, and each cycle is 256 samples long.
 * I believe the sample format is 16-bit mono @ 40kHz. Yes, 40000Hz. Each sample is tuned to D#4.
 * The tool only supports 16-bit mono WAV files; each wavetable must contain at least 8192 samples, and the first 8192 will be used. They should be encoded at 40kHz if you want them to sound correct.
