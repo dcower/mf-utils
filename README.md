@@ -21,10 +21,10 @@ You need Python 2.7 or later, or Python 3.4 or later, to run this tool. If you d
 3. Extract wavetables from the firmware:
 
 ```
-python wavetable_tool.py extract MicroFreak_Firmware_Update_1_1_2_390.mff
+python wavetable_tool.py --out_wav_dir out_wavetables/ extract MicroFreak_Firmware_Update_1_1_2_390.mff
 ```
 
-4. Modify the newly extracted wavetables (in `wavetables/` by default) as you see fit. For this example, we'll use the supplied sample wavetables I made.
+4. Modify the newly extracted wavetables as you see fit. For this example, we'll use the supplied sample wavetables I made.
 
 5. Replace the wavetables in the firmware with our fancy new wavetables:
 
