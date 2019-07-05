@@ -89,7 +89,9 @@ def smooth_parser_handler(args):
               distance_min = distance
               rotate_amount = i
 
-          print("Rotated: {}".format(rotate_amount))
+          if args.verbose:
+            print("Rotated: {}".format(rotate_amount))
+
           cycle = cycle[rotate_amount:] + cycle[:rotate_amount]
           wavetables.tables[table_index][cycle_index] = cycle
 
